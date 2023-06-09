@@ -4,7 +4,7 @@ const beepArray = process.argv.slice(2);
 const beepNum = beepArray.map((str) => {
   return Number(str);
 });
-//sort numbers in numberBeep from smallest to largest, the callback function inside is to make sure sort() compares the numerical value instead of Unicode code
+//sort numbers in beepNum from smallest to largest, the callback function inside is to make sure sort() compares the numerical value instead of Unicode code
 const sortedBeepNum = beepNum.sort((a, b) => {
   return a - b;
 });
