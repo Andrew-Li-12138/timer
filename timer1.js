@@ -4,8 +4,16 @@ const beepArray = process.argv.slice(2);
 const beepNum = beepArray.map((str) => {
   return Number(str);
 });
+//only take positive numbers
+const posBeepNum = beepNum.map((num) => {
+  if (num > 0 && typeof num === 'number') {
+    return num;
+  }
+});
+//we don't need undefined to occupy the index of element in our array
+const filteredBeepNum = posBeepNum.filter((num) => num !== undefined);
 //sort numbers in beepNum from smallest to largest, the callback function inside is to make sure sort() compares the numerical value instead of Unicode code
-const sortedBeepNum = beepNum.sort((a, b) => {
+const sortedBeepNum = filteredBeepNum.sort((a, b) => {
   return a - b;
 });
 //this console.log is here to assist visual representation of output in console as well as act as a debugger
@@ -19,7 +27,7 @@ for (let i = 0; i < sortedBeepNum.length; i++) {
   }, sortedBeepNum[i] * 1000);
 }
 
-//test code example: (enter in console) node timer1.js 10 3 5 15 9 
+//test code example: (enter in console) node timer1.js 10 3 5 15 9
 //expected output:
 //[ 3, 5, 9, 10, 15 ]
 // ⏰  ⏰  ⏰  ⏰  ⏰
