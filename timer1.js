@@ -19,7 +19,7 @@ for (let i = 0; i < sortedBeepNum.length; i++) {
   }, sortedBeepNum[i] * 1000);
 }
 
-//test code example: (enter in console) node timer1.js 3 5 9 10 15
+//test code example: (enter in console) node timer1.js 10 3 5 15 9 
 //expected output:
 //[ 3, 5, 9, 10, 15 ]
 // ⏰  ⏰  ⏰  ⏰  ⏰
